@@ -1,0 +1,1124 @@
+/* ============================================
+   VARIABLES Y ESTILOS BASE
+   ============================================ */
+
+:root {
+    /* Colores principales */
+    --blanco: #ffffff;
+    --azul: #2a5c9a;
+    --azul-claro: #3a7bd5;
+    --verde-menta: #4fc3a7;
+    --gris-claro: #f8f9fa;
+    --gris-medio: #e9ecef;
+    --gris-oscuro: #6c757d;
+    --negro: #212529;
+    --sombra: rgba(0, 0, 0, 0.1);
+    
+    /* Colores secundarios */
+    --whatsapp: #25D366;
+    --whatsapp-hover: #1da851;
+    --facebook: #1877F2;
+    --twitter: #1DA1F2;
+    
+    /* Tipografía */
+    --fuente-titulos: 'Poppins', sans-serif;
+    --fuente-texto: 'Roboto', sans-serif;
+    
+    /* Espaciado */
+    --espacio-xs: 0.5rem;
+    --espacio-sm: 1rem;
+    --espacio-md: 1.5rem;
+    --espacio-lg: 2rem;
+    --espacio-xl: 3rem;
+    
+    /* Bordes */
+    --radio-sm: 5px;
+    --radio-md: 10px;
+    --radio-lg: 50px;
+    
+    /* Sombras */
+    --sombra-suave: 0 2px 10px var(--sombra);
+    --sombra-media: 0 5px 15px var(--sombra);
+    --sombra-fuerte: 0 10px 30px var(--sombra);
+    --sombra-whatsapp: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* ============================================
+   ESTILOS GENERALES
+   ============================================ */
+
+body {
+    font-family: var(--fuente-texto);
+    color: var(--negro);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--blanco);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    margin-bottom: var(--espacio-sm);
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--azul);
+    text-align: center;
+    margin-bottom: var(--espacio-lg);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--azul);
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: var(--gris-oscuro);
+    margin-bottom: var(--espacio-xs);
+}
+
+p {
+    margin-bottom: var(--espacio-sm);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espacio-md);
+}
+
+section {
+    padding: var(--espacio-xl) 0;
+}
+
+/* ============================================
+   COMPONENTES REUTILIZABLES
+   ============================================ */
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: var(--radio-lg);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-family: var(--fuente-titulos);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp);
+    color: var(--blanco);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: var(--sombra-whatsapp);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--whatsapp-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* WhatsApp flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--whatsapp);
+    color: var(--blanco);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: var(--sombra-media);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: var(--whatsapp-hover);
+    transform: scale(1.1);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    background-color: var(--blanco);
+    padding: var(--espacio-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--sombra-suave);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--azul);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--verde-menta);
+}
+
+.desktop-contact {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-md);
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gris-oscuro);
+}
+
+/* ============================================
+   HERO / HOME
+   ============================================ */
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--blanco);
+    text-align: center;
+    padding: 8rem 0;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: var(--espacio-md);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.hero .btn-whatsapp {
+    /* font-size: 1.2rem; */
+    padding: var(--espacio-sm) 2.5rem;
+    margin: 0 auto;
+    width: 60%;
+}
+
+/* ============================================
+   QUIÉNES SOMOS
+   ============================================ */
+
+.about {
+    background-color: var(--gris-claro);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-xl);
+    align-items: center;
+}
+
+.about-text h2 {
+    text-align: left;
+}
+
+.about-img {
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    box-shadow: var(--sombra-fuerte);
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.03);
+}
+
+/* ============================================
+   SERVICIOS
+   ============================================ */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--espacio-lg);
+}
+
+.service-card {
+    background-color: var(--blanco);
+    border-radius: var(--radio-md);
+    padding: var(--espacio-lg);
+    box-shadow: var(--sombra-media);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gris-medio);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: var(--verde-menta);
+}
+
+.service-icon {
+    background-color: var(--verde-menta);
+    color: var(--blanco);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: var(--espacio-md);
+}
+
+.service-card h3 {
+    margin-bottom: var(--espacio-sm);
+}
+
+.service-card ul {
+    padding-left: 1.2rem;
+    margin-bottom: var(--espacio-md);
+}
+
+.service-card li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-card li::before {
+    content: "✓";
+    color: var(--verde-menta);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: var(--espacio-xl);
+}
+
+.cta-container p {
+    margin-bottom: var(--espacio-md);
+    font-size: 1.1rem;
+    color: var(--gris-oscuro);
+}
+
+/* Botones de CTA específicos que NO deben ocupar ancho completo */
+.services .cta-container .btn-whatsapp,
+.gallery .cta-container .btn-whatsapp,
+.faq .cta-container .btn-whatsapp {
+    width: auto !important; /* Ancho automático según contenido */
+    max-width: 40%; /* Máximo 40% del contenedor */
+    padding: 0.9rem 2.5rem; /* Padding horizontal generoso */
+    display: inline-flex; /* Para centrado correcto */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+}
+
+/* Asegurar que los contenedores CTA mantengan el centrado */
+.services .cta-container,
+.gallery .cta-container,
+.faq .cta-container {
+    text-align: center;
+}
+
+/* ============================================
+   TESTIMONIOS - ESTILO MINIMALISTA CORREGIDO
+   ============================================ */
+
+.testimonials {
+    background-color: var(--gris-claro);
+    position: relative;
+    padding: var(--espacio-xl) 0;
+}
+
+.testimonials h2 {
+    text-align: center;
+    color: var(--azul);
+    margin-bottom: var(--espacio-sm);
+}
+
+.testimonials .section-subtitle {
+    text-align: center;
+    color: var(--gris-oscuro);
+    margin-bottom: var(--espacio-xl);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-slider {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+}
+
+.testimonial-slide {
+    display: none;
+    animation: fadeIn 0.8s ease-out;
+    height: 100%;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+.testimonial-content {
+    background-color: var(--blanco);
+    padding: var(--espacio-xl);
+    border-radius: var(--radio-md);
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border: 1px solid var(--gris-medio);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-slide.active .testimonial-content {
+    transform: translateY(0);
+}
+
+.testimonial-text {
+    position: relative;
+    margin-bottom: var(--espacio-lg);
+    text-align: center;
+    padding: 0 var(--espacio-md);
+}
+
+/* ELIMINAMOS LAS COMILLAS DECORATIVAS */
+.quote-icon {
+    display: none; /* Ocultamos completamente las comillas */
+}
+
+.testimonial-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gris-oscuro);
+    font-style: italic;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Añadimos comillas sutiles con pseudo-elementos */
+.testimonial-text::before {
+    content: '"';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    font-size: 3.5rem;
+    font-family: Georgia, serif;
+    color: var(--verde-menta);
+    opacity: 0.2;
+    line-height: 1;
+}
+
+.testimonial-text::after {
+    content: '"';
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    font-size: 3.5rem;
+    font-family: Georgia, serif;
+    color: var(--verde-menta);
+    opacity: 0.2;
+    line-height: 1;
+}
+
+.testimonial-author {
+    text-align: center;
+    padding-top: var(--espacio-md);
+    border-top: 1px solid var(--gris-medio);
+}
+
+.testimonial-author h4 {
+    color: var(--azul);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.treatment {
+    font-size: 0.9rem;
+    color: var(--gris-oscuro);
+    font-style: italic;
+    display: block;
+    opacity: 0.8;
+}
+
+/* Indicadores - CORREGIMOS EL PROBLEMA DEL HOVER */
+.testimonial-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: var(--espacio-lg);
+}
+
+.testimonial-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--gris-medio);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.testimonial-indicator.active {
+    background-color: var(--verde-menta);
+    transform: scale(1.2);
+    border-color: var(--verde-menta);
+}
+
+/* SOLUCIÓN: Estilos hover separados que NO interfieren con .active */
+.testimonial-indicator:not(.active):hover {
+    background-color: var(--azul-claro);
+    transform: scale(1.1);
+}
+
+/* Eliminamos el efecto hover persistente */
+.testimonial-indicator.active:hover {
+    transform: scale(1.2); /* Mantiene el tamaño del active */
+    background-color: var(--verde-menta); /* Mantiene el color del active */
+}
+
+/* Navegación con flechas */
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--espacio-lg);
+}
+
+.testimonial-nav-btn {
+    background-color: var(--blanco);
+    border: 2px solid var(--gris-medio);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--azul);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-nav-btn:hover {
+    background-color: var(--verde-menta);
+    color: var(--blanco);
+    border-color: var(--verde-menta);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-nav-btn:active {
+    transform: translateY(0);
+}
+
+/* Efectos hover en la tarjeta completa */
+.testimonial-content:hover {
+    transform: translateY(-5px);
+    /* box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);  */
+    border-color: var(--verde-menta);
+}
+
+/* Línea decorativa */
+.testimonial-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul), var(--verde-menta));
+    border-radius: var(--radio-md) var(--radio-md) 0 0;
+}
+
+/* ============================================
+   GALERÍA DE CASOS DE ÉXITO - VERSIÓN CORREGIDA
+   ============================================ */
+
+.gallery {
+    background-color: var(--blanco);
+    padding: var(--espacio-xl) 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gris-oscuro);
+    margin-bottom: var(--espacio-xl);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--espacio-xl);
+    margin-bottom: var(--espacio-xl);
+}
+
+.gallery-item {
+    background-color: var(--gris-claro);
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    box-shadow: var(--sombra-media);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   CONTENEDOR DE COMPARACIÓN
+   ============================================ */
+
+.image-comparison {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: var(--radio-md) var(--radio-md) 0 0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.before-after-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: col-resize;
+    touch-action: none; /* Mejor control táctil */
+}
+
+/* ============================================
+   IMÁGENES - AMBAS AL 100%
+   ============================================ */
+
+.before-image, .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Imagen "antes" - Siempre visible completamente */
+.before-image {
+    z-index: 1;
+}
+
+/* Imagen "después" - Se revela progresivamente */
+.after-image {
+    z-index: 2;
+    /* Inicialmente mostrar solo el 50% derecho */
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    transition: clip-path 0.1s ease;
+}
+
+/* Imágenes dentro de los contenedores */
+.before-image img,
+.after-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none; /* Evitar interferencia con el drag */
+}
+
+/* ============================================
+   ETIQUETAS "ANTES" Y "DESPUÉS"
+   ============================================ */
+
+.before-image .label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(42, 92, 154, 0.9);
+    color: var(--blanco);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 5px 15px;
+    border-radius: 3px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.after-image .label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(79, 195, 167, 0.9);
+    color: var(--blanco);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 5px 15px;
+    border-radius: 3px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* ============================================
+   SLIDER - POSICIÓN CENTRAL INICIAL
+   ============================================ */
+
+.slider-bar {
+    position: absolute;
+    top: 0;
+    left: 50%; /* ¡IMPORTANTE! Cambiado de right a left */
+    width: 4px;
+    height: 100%;
+    background-color: var(--blanco);
+    transform: translateX(-50%);
+    z-index: 4;
+    cursor: col-resize;
+    pointer-events: none; /* El handle manejará los eventos */
+}
+
+.slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--blanco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--azul);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    cursor: col-resize;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover en el handle */
+.slider-handle:hover {
+    background-color: var(--verde-menta);
+    color: var(--blanco);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   ESTADOS ESPECIALES
+   ============================================ */
+
+/* Estado de arrastre */
+.dragging .slider-handle {
+    background-color: var(--verde-menta);
+    color: var(--blanco);
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.dragging .after-image {
+    transition: none; /* Eliminar transición durante el drag para mejor respuesta */
+}
+
+/* Foco para accesibilidad */
+.before-after-container:focus {
+    outline: 2px solid var(--verde-menta);
+    outline-offset: 2px;
+}
+
+.before-after-container:focus .slider-handle {
+    background-color: var(--azul);
+    color: var(--blanco);
+}
+
+/* ============================================
+   INFORMACIÓN DEL CASO
+   ============================================ */
+
+.case-info {
+    padding: var(--espacio-md);
+    background-color: var(--blanco);
+}
+
+.case-info h3 {
+    color: var(--azul);
+    margin-bottom: var(--espacio-sm);
+    font-size: 1.3rem;
+}
+
+.case-info p {
+    margin-bottom: 0.5rem;
+    color: var(--gris-oscuro);
+    font-size: 0.95rem;
+}
+
+.case-info strong {
+    color: var(--azul);
+    font-weight: 600;
+}
+
+/* ============================================
+   CTA DE GALERÍA
+   ============================================ */
+
+.gallery .cta-container {
+    background-color: var(--gris-claro);
+    padding: var(--espacio-lg);
+    border-radius: var(--radio-md);
+    margin-top: var(--espacio-xl);
+    border-left: 4px solid var(--verde-menta);
+}
+
+/* ============================================
+   ANIMACIONES PARA MEJOR UX
+   ============================================ */
+
+@keyframes sliderPulse {
+    0% { box-shadow: 0 0 0 0 rgba(79, 195, 167, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(79, 195, 167, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(79, 195, 167, 0); }
+}
+
+.slider-handle {
+    animation: sliderPulse 2s infinite;
+}
+
+/* ============================================
+   COMPATIBILIDAD CON NAVEGADORES SIN CLIP-PATH
+   ============================================ */
+
+@supports not (clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)) {
+    .after-image {
+        width: 50%; /* Fallback para navegadores antiguos */
+        clip-path: none;
+    }
+    
+    .slider-bar {
+        left: 50%;
+    }
+}
+
+/* ============================================
+   ESTILOS PARA EL TEXTO DE AYUDA (OPCIONAL)
+   ============================================ */
+
+.image-comparison::after {
+    /* content: "← Arrastra para comparar →"; */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--blanco);
+    padding: 5px 10px;
+    border-radius: var(--radio-sm);
+    font-size: 0.8rem;
+    z-index: 6;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.image-comparison:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .image-comparison::after {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        bottom: 5px;
+    }
+}
+
+/* ============================================
+   PREGUNTAS FRECUENTES
+   ============================================ */
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: var(--espacio-sm);
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--gris-medio);
+}
+
+.faq-question {
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: var(--espacio-md);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    background-color: var(--blanco);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-answer.open {
+    padding: var(--espacio-md);
+    max-height: 500px;
+}
+
+.faq-answer p {
+    color: var(--gris-oscuro);
+    line-height: 1.7;
+}
+
+/* ============================================
+   CONTACTO
+   ============================================ */
+
+.contact {
+    background-color: var(--gris-claro);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-xl);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-md);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--espacio-sm);
+}
+
+.contact-icon {
+    background-color: var(--verde-menta);
+    color: var(--blanco);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--azul);
+}
+
+.contact-item p {
+    margin-bottom: 0;
+    color: var(--gris-oscuro);
+}
+
+.contact-cta {
+    margin-top: var(--espacio-md);
+}
+
+.map-container {
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    box-shadow: var(--sombra-media);
+    height: 400px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: var(--espacio-xl) 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-lg);
+}
+
+.footer-logo {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.footer-logo span {
+    color: var(--verde-menta);
+}
+
+.footer p {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.copyright {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.footer-cta {
+    margin-top: var(--espacio-sm);
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animación para elementos al hacer scroll */
+/* .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+/* ============================================
+   OCULTAR NAVEGACIÓN (IMPORTANTE)
+   ============================================ */
+
+/* Asegurar que no haya menús de navegación */
+nav, .nav, .navbar, .menu, .navigation, .menu-container {
+    display: none !important;
+}
+
+/* Ocultar cualquier elemento que pueda parecer un menú hamburguesa */
+.menu-toggle, .hamburger, .navbar-toggle, .nav-toggle {
+    display: none !important;
+}

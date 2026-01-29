@@ -1,0 +1,683 @@
+/* ============================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet (768px - 992px) */
+@media (max-width: 992px) {
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-xl);
+    }
+    
+    .about-text h2 {
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+/* Móvil grande (576px - 768px) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: var(--espacio-xl) 0;
+    }
+    
+    .desktop-contact {
+        display: none;
+    }
+    
+    .header {
+        padding: var(--espacio-sm) 0;
+    }
+    
+    .logo {
+        font-size: 1.6rem;
+    }
+    
+    .testimonial-slide {
+        padding: var(--espacio-lg);
+    }
+    
+    .faq-question {
+        padding: var(--espacio-md);
+        font-size: 1rem;
+    }
+    
+    .faq-answer.open {
+        padding: var(--espacio-md);
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Móvil pequeño (hasta 576px) */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .btn, .btn-whatsapp {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 380px;
+    }
+    
+    .whatsapp-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: var(--espacio-lg);
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    .container {
+        padding: 0 var(--espacio-sm);
+    }
+    
+    .service-card {
+        padding: var(--espacio-md);
+    }
+    
+    .testimonial-slide {
+        padding: var(--espacio-md);
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+    
+    .author-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    .footer-logo {
+        font-size: 1.8rem;
+    }
+    
+    .footer {
+        padding: var(--espacio-lg) 0;
+    }
+}
+
+/* Móvil muy pequeño (hasta 400px) */
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero {
+        padding: 5rem 0;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .faq-question {
+        font-size: 0.95rem;
+        padding: 0.8rem var(--espacio-sm);
+    }
+    
+    .faq-answer.open {
+        padding: var(--espacio-sm);
+    }
+    
+    .whatsapp-float {
+        bottom: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet en orientación horizontal */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero {
+        padding: 7rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pantallas muy grandes (más de 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Ajustes para Safari iOS */
+@supports (-webkit-touch-callout: none) {
+    .whatsapp-float {
+        bottom: 2.5rem; /* Ajuste para barra de iOS */
+    }
+    
+    .hero {
+        background-attachment: scroll; /* Fix para parallax en iOS */
+    }
+}
+
+/* Impresión */
+@media print {
+    .whatsapp-float,
+    .btn-whatsapp,
+    .footer-cta {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    section {
+        padding: 1cm 0;
+        page-break-inside: avoid;
+    }
+    
+    .hero {
+        background: none !important;
+        color: black !important;
+        padding: 1cm 0;
+    }
+    
+    .hero h1 {
+        color: black;
+    }
+    
+    .footer {
+        background: none !important;
+        color: black !important;
+        border-top: 1px solid #ccc;
+    }
+}
+
+/* Galería de Casos - Responsive */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-lg);
+    }
+    
+    .image-comparison {
+        height: 250px;
+    }
+    
+    .slider-handle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-comparison {
+        height: 200px;
+    }
+    
+    .before-image .label,
+    .after-image .label {
+        padding: 3px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .case-info {
+        padding: var(--espacio-sm);
+    }
+    
+    .case-info h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-height: 600px) and (orientation: landscape) {
+    .image-comparison {
+        height: 200px;
+    }
+}
+
+/* ============================================
+   GALERÍA DE CASOS - RESPONSIVE CORREGIDO
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Asegurar que el slider mantenga su posición */
+    .slider-bar {
+        right: 50%; /* Mantener alineado con el borde de la imagen "después" */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-lg);
+    }
+    
+    .image-comparison {
+        height: 250px;
+    }
+    
+    .slider-handle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Ajustar posición de las etiquetas en móvil */
+    .before-image .label {
+        top: 10px;
+        left: 10px;
+        padding: 4px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .after-image .label {
+        top: 10px;
+        right: 10px;
+        padding: 4px 12px;
+        font-size: 0.85rem;
+    }
+    
+    /* Mantener lógica del slider */
+    .slider-bar {
+        right: 50%;
+        /* transform: translateX(50%); */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-comparison {
+        height: 200px;
+    }
+    
+    .before-image .label,
+    .after-image .label {
+        padding: 3px 10px;
+        font-size: 0.8rem;
+        top: 8px;
+    }
+    
+    .before-image .label {
+        left: 8px;
+    }
+    
+    .after-image .label {
+        right: 8px;
+    }
+    
+    .case-info {
+        padding: var(--espacio-sm);
+    }
+    
+    .case-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Slider más pequeño pero manteniendo lógica */
+    .slider-handle {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .slider-bar {
+        right: 50%;
+    }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-height: 600px) and (orientation: landscape) {
+    .image-comparison {
+        height: 200px;
+    }
+    
+    /* Ajustar etiquetas para orientación horizontal */
+    .before-image .label,
+    .after-image .label {
+        top: 5px;
+        padding: 2px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .slider-handle {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Ajustes para tablets en landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .image-comparison {
+        height: 280px;
+    }
+    
+    .slider-bar {
+        right: 50%; /* Mantener posición correcta */
+    }
+}
+
+/* Ajustes específicos para Safari iOS en móvil */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+        .image-comparison {
+            /* Mejorar rendimiento táctil en iOS */
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+        
+        .slider-handle {
+            /* Mejorar visibilidad táctil */
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
+
+
+/* Ajustes responsivos para estos botones específicos */
+@media (max-width: 992px) {
+    .services .cta-container .btn-whatsapp,
+    .gallery .cta-container .btn-whatsapp,
+    .faq .cta-container .btn-whatsapp {
+        max-width: 50%; /* Un poco más ancho en tablet */
+        padding: 0.8rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services .cta-container .btn-whatsapp,
+    .gallery .cta-container .btn-whatsapp,
+    .faq .cta-container .btn-whatsapp {
+        max-width: 60%; /* Más ancho en móviles grandes */
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem; /* Texto un poco más pequeño */
+    }
+}
+
+@media (max-width: 576px) {
+    .services .cta-container .btn-whatsapp,
+    .gallery .cta-container .btn-whatsapp,
+    .faq .cta-container .btn-whatsapp {
+        max-width: 100%; /* Más ancho en móviles pequeños */
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+        width: 100% !important; /* En móvil muy pequeño, ocupar ancho completo */
+        white-space: normal; /* Permitir que el texto se divida si es necesario */
+    }
+}
+
+@media (max-width: 400px) {
+    .services .cta-container .btn-whatsapp,
+    .gallery .cta-container .btn-whatsapp,
+    .faq .cta-container .btn-whatsapp {
+        max-width: 100%; /* Ancho completo en móviles muy pequeños */
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .hero .btn-whatsapp{
+        width: 100% !important;
+        padding: 1rem;
+        font-size: 0.9rem;
+        max-width: 380px;
+    }
+}
+
+/* Añadir al responsive.css */
+
+@media (max-width: 768px) {
+    .after-image {
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%) !important;
+        -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%) !important;
+    }
+    
+    .slider-bar {
+        left: 50% !important;
+    }
+}
+
+/* ============================================
+   TESTIMONIOS RESPONSIVE CORREGIDOS
+   ============================================ */
+
+@media (max-width: 992px) {
+    .testimonial-slider {
+        max-width: 700px;
+    }
+    
+    .testimonial-content {
+        padding: var(--espacio-lg);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Sombra ajustada para tablet */
+    }
+    
+    .testimonial-text::before {
+        font-size: 3rem;
+        top: -12px;
+    }
+    
+    .testimonial-text::after {
+        font-size: 3rem;
+        bottom: -20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-slider {
+        max-width: 100%;
+        min-height: 350px;
+    }
+    
+    .testimonial-content {
+        padding: var(--espacio-lg) var(--espacio-md);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Sombra ajustada para móvil */
+    }
+    
+    .testimonial-text {
+        padding: 0;
+    }
+    
+    .testimonial-text p {
+        font-size: 1rem;
+    }
+    
+    .testimonial-text::before,
+    .testimonial-text::after {
+        font-size: 2.5rem;
+    }
+    
+    .testimonial-text::before {
+        top: -10px;
+        left: -5px;
+    }
+    
+    .testimonial-text::after {
+        bottom: -15px;
+        right: -5px;
+    }
+    
+    .testimonial-author h4 {
+        font-size: 1.1rem;
+    }
+    
+    .treatment {
+        font-size: 0.85rem;
+    }
+    
+    .testimonial-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonial-slider {
+        min-height: 380px;
+    }
+    
+    .testimonial-content {
+        padding: var(--espacio-md) var(--espacio-sm);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave para móvil pequeño */
+    }
+    
+    .testimonial-text {
+        margin-bottom: var(--espacio-md);
+    }
+    
+    .testimonial-text::before,
+    .testimonial-text::after {
+        font-size: 2rem;
+    }
+    
+    .testimonial-text::before {
+        top: -8px;
+        left: -3px;
+    }
+    
+    .testimonial-text::after {
+        bottom: -12px;
+        right: -3px;
+    }
+    
+    .testimonial-author {
+        padding-top: var(--espacio-sm);
+    }
+    
+    .testimonial-indicators {
+        gap: 0.6rem;
+    }
+    
+    .testimonial-indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .testimonial-nav {
+        gap: 0.8rem;
+    }
+    
+    .testimonial-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .testimonial-slider {
+        min-height: 420px;
+    }
+    
+    .testimonial-text p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .testimonial-text::before,
+    .testimonial-text::after {
+        font-size: 1.8rem;
+    }
+    
+    .testimonial-author h4 {
+        font-size: 1rem;
+    }
+    
+    .treatment {
+        font-size: 0.8rem;
+    }
+}
